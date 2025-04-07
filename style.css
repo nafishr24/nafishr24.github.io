@@ -54,6 +54,10 @@ section {
     z-index: 100;
 }
 
+.header.sticky {
+    border-bottom: 1 rem solid rgba(0,0,0,.2);
+}
+
 .top {
     color: white;
     font-size: 2rem;
@@ -68,8 +72,9 @@ section {
 
 .navbar a {
     color: white;
-    font-size: 1.8rem;
-    padding: 0 15px; /* Memberikan jarak 10 px pada antar tulisan navbar */
+    font-size: 1.5rem;
+    flex-wrap: wrap;
+    padding: 0 10px; /* Memberikan jarak 10 px pada antar tulisan navbar */
     transition: .3s ease;
 }
 
@@ -172,22 +177,24 @@ section {
 .content-1, .content-2 {
     padding: 20px;
     border-radius: 5px;
-    text-align: justify; /* Teks rata kanan kiri */
-    text-justify: inter-word;
 }
 
 .img-content img {
     width: 30vw;
-    /* transform: scale(0.9); */
+}
+
+.portfolio-header h1 {
+    font-family: var(--second-font);
+    padding-top: 4rem;
+    padding-bottom: 2rem;
 }
 
 .portfolio-container {
 
     max-width: 1200px;
     margin: 0 auto;
-    background: var(--main-bg);
+    background: var(--first-font);
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     overflow: hidden;
 }
 .portfolio-container h1 {
@@ -200,10 +207,11 @@ section {
 .category-tabs {
     display: flex;
     justify-content: center;
-    background: var(--main-bg);
+    /* background: #1c1f26; */
     padding: 15px;
     flex-wrap: wrap;
     gap: 10px;
+    /* border-radius: 50%; */
 }
 
 .tab-btn {
@@ -352,7 +360,7 @@ section {
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     margin-bottom: 20px;
-    background: #f8f9fa;
+    /* background: #f8f9fa; */
     padding: 10px;
 }
 
