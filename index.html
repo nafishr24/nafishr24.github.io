@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <meta name="description" content="Portfolio Moh. Nafis Husen Romadani" />
+    <meta name="author" content="Nafis" />
+
+    <meta property="og:title" content="digital-profile-carousel" />
+    <meta property="og:description" content="Portfolio Moh. Nafis Husen Romadani" />
+    <meta property="og:type" content="website" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const sections = document.querySelectorAll('[data-scroll]');
+
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add(
+                  entry.target.querySelector('h2') ? 'animate-fade-slide-up' : 'animate-scale-in'
+                );
+                entry.target.style.opacity = '1';
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.3 });
+
+          sections.forEach(section => {
+            observer.observe(section);
+          });
+        });
+    </script>
+  </body>
+</html>
